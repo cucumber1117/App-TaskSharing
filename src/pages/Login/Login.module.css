@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f9fafb;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .subtitle {
+    color: #6b7280; /* gray-500 */
+    margin-bottom: 24px;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 220px;
+  }
+  
+  .loginBtn {
+    background-color: #3b82f6; /* blue-500 */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .loginBtn:hover {
+    background-color: #2563eb; /* blue-600 */
+  }
+  
+  .signupBtn {
+    background-color: #10b981; /* green-500 */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .signupBtn:hover {
+    background-color: #059669; /* green-600 */
+  }
+  
+  .loginBtn:disabled,
+  .signupBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  

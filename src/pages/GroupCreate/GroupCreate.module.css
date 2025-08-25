@@ -1,0 +1,62 @@
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", sans-serif;
+    gap: 16px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+  }
+  
+  .searchContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .userList {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .userItem {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .userItem:last-child {
+    border-bottom: none;
+  }
+  
+  .button {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6366f1;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .button:hover {
+    background-color: #4f46e5;
+  }
+  

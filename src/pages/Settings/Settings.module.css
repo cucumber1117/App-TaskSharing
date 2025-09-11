@@ -1,0 +1,45 @@
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    margin: 20px 0;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  
+  .input {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .button {
+    margin-top: 12px;
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+  }
+  

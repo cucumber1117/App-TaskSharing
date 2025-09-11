@@ -1,32 +1,40 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginWithGoogle } from "../../firebase/auth/login";
-import { signUpWithGoogle } from "../../firebase/auth/sign-up";
+import { auth, db } from "../../firebase/firebaseConfig";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import styles from "./Login.module.css";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  // Googleでログイン or サインアップ
+  const handleGoogleAuth = async () => {
     setLoading(true);
     try {
-      await loginWithGoogle();
-      navigate("/"); // ホームへ遷移
-    } catch (error) {
-      alert("ログイン失敗: " + error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
 
-  const handleSignUp = async () => {
-    setLoading(true);
-    try {
-      await signUpWithGoogle();
-      navigate("/"); // ホームへ遷移
+      // Firestoreにユーザー情報があるか確認
+      const userRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef);
+
+      if (!userSnap.exists()) {
+        // 新規ユーザーならFirestoreに登録
+        await setDoc(userRef, {
+          name: user.displayName || "未設定",
+          email: user.email,
+          createdAt: new Date(),
+          friends: [],  // フレンド用の空配列
+          groups: [],   // 参加グループの空配列
+        });
+      }
+
+      navigate("/home"); // ホームへ遷移
     } catch (error) {
-      alert("サインアップ失敗: " + error.message);
+      alert("認証失敗: " + error.message);
     } finally {
       setLoading(false);
     }
@@ -38,11 +46,12 @@ const Login = () => {
       <p className={styles.subtitle}>Googleアカウントでログイン / サインアップ</p>
 
       <div className={styles.buttonGroup}>
-        <button onClick={handleLogin} className={styles.loginBtn} disabled={loading}>
-          {loading ? "処理中..." : "Googleでログイン"}
-        </button>
-        <button onClick={handleSignUp} className={styles.signupBtn} disabled={loading}>
-          {loading ? "処理中..." : "Googleでサインアップ"}
+        <button
+          onClick={handleGoogleAuth}
+          className={styles.loginBtn}
+          disabled={loading}
+        >
+          {loading ? "処理中..." : "Googleでログイン / サインアップ"}
         </button>
       </div>
     </div>

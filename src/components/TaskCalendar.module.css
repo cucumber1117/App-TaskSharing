@@ -1,0 +1,337 @@
+.calendarContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.monthYear {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.calendar {
+  padding: 20px;
+}
+
+.weekDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  margin-bottom: 10px;
+}
+
+.weekDay {
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #666;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background: #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.calendarDay {
+  min-height: 100px;
+  padding: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendarDay:hover {
+  background: #f8f9fa;
+  transform: scale(1.02);
+}
+
+.calendarDay.today {
+  background: #e3f2fd;
+  border: 2px solid #2196f3;
+}
+
+.calendarDay.otherMonth {
+  color: #ccc;
+  background: #f9f9f9;
+}
+
+.calendarDay.hasTask {
+  background: #fff3e0;
+}
+
+.calendarDay.overdue {
+  background: #ffebee;
+  border-left: 4px solid #f44336;
+}
+
+.dayNumber {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.taskIndicators {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-grow: 1;
+}
+
+.taskIndicator {
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 1px;
+}
+
+.taskIndicator.priority高 {
+  background: linear-gradient(90deg, #ff4757, #ff3838);
+}
+
+.taskIndicator.priority中 {
+  background: linear-gradient(90deg, #ffa726, #ff9800);
+}
+
+.taskIndicator.priority低 {
+  background: linear-gradient(90deg, #66bb6a, #4caf50);
+}
+
+.taskIndicator.completed {
+  background: #e0e0e0 !important;
+  opacity: 0.6;
+}
+
+.moreIndicator {
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.taskDetails {
+  border-top: 1px solid #e9ecef;
+  padding: 25px 30px;
+  background: #f8f9fa;
+}
+
+.selectedDateTitle {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.taskItem {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.taskItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.taskItem.completedTask {
+  opacity: 0.7;
+  background: #f8f9fa;
+}
+
+.taskItem.overdueTask {
+  border-left: 4px solid #f44336;
+  background: #ffebee;
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.taskTitle {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  flex-grow: 1;
+}
+
+.taskPriority {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.taskPriority.priority高 {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.taskPriority.priority中 {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+.taskPriority.priority低 {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.taskMeta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.taskStatus {
+  padding: 2px 8px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.taskType {
+  padding: 2px 8px;
+  background: #f3e5f5;
+  color: #7b1fa2;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.taskTime {
+  padding: 2px 8px;
+  background: #e8f5e8;
+  color: #2e7d32;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+
+
+.taskDescription {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.noTasks {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .calendarContainer {
+    margin: 10px;
+    border-radius: 8px;
+  }
+  
+  .calendarHeader {
+    padding: 15px 20px;
+  }
+  
+  .monthYear {
+    font-size: 20px;
+  }
+  
+  .calendar {
+    padding: 15px;
+  }
+  
+  .calendarDay {
+    min-height: 80px;
+    padding: 6px;
+  }
+  
+  .dayNumber {
+    font-size: 14px;
+  }
+  
+  .taskDetails {
+    padding: 20px;
+  }
+  
+  .taskHeader {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendarDay {
+    min-height: 60px;
+    padding: 4px;
+  }
+  
+  .dayNumber {
+    font-size: 12px;
+  }
+  
+  .taskIndicator {
+    height: 3px;
+  }
+  
+  .moreIndicator {
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,155 @@
+.container {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.header {
+  background: white;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.backBtn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.backBtn:hover {
+  background: #545b62;
+}
+
+.groupInfo {
+  margin-top: 10px;
+}
+
+.title {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.memberCount {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.content {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sidebar {
+  flex: 0 0 280px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.mainContent {
+  flex: 1;
+}
+
+.memberList h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.memberList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.memberItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.memberItem:last-child {
+  border-bottom: none;
+}
+
+.memberName {
+  font-size: 14px;
+  color: #333;
+}
+
+.ownerBadge {
+  background: #007bff;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.groupActions {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.homeBtn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+}
+
+.homeBtn:hover {
+  background: #218838;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.error p {
+  color: #dc3545;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .sidebar {
+    flex: none;
+  }
+  
+  .header {
+    padding: 15px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+}

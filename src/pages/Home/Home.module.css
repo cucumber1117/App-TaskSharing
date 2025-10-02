@@ -1,66 +1,140 @@
 .container {
-    min-height: 100vh;
-    background-color: #f0f4f8; /* 背景 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Segoe UI", sans-serif;
-    padding: 40px 20px;
-  }
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.centerHeader {
+  background: white;
+  padding: 30px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e1e5e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+  text-align: center;
+}
+
+.navButtons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.button {
+  background: #667eea;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.logout {
+  background: #e53e3e;
+}
+
+.logout:hover {
+  background: #c53030;
+}
   
-  .centerHeader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-  
+.viewToggle {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.toggleButton {
+  padding: 12px 24px;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.toggleButton:hover {
+  background: #f8f9ff;
+  transform: translateY(-2px);
+}
+
+.toggleButton.active {
+  background: #667eea;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 30px 20px;
+}
+
+.contentContainer {
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (max-width: 768px) {
   .title {
     font-size: 2rem;
-    font-weight: 700;
   }
   
   .navButtons {
-    display: flex;
-    gap: 12px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
   }
   
   .button {
-    background-color: #6366f1; /* Indigo-400 */
-    color: white;
-    padding: 8px 18px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  
-  .button:hover {
-    background-color: #4f46e5; /* Indigo-600 */
-  }
-  
-  .logout {
-    background-color: #ef4444; /* Red-500 */
-  }
-  
-  .logout:hover {
-    background-color: #dc2626; /* Red-600 */
-  }
-  
-  .main {
     width: 100%;
-    display: flex;
     justify-content: center;
   }
   
-  .taskContainer {
-    width: 100%;
-    max-width: 800px;
-    background-color: white;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  .viewToggle {
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
   }
   
+  .toggleButton {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .main {
+    padding: 0 10px 20px 10px;
+  }
+  
+  .centerHeader {
+    padding: 20px 15px;
+  }
+}  
